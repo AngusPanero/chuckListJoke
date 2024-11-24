@@ -7,25 +7,86 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  background: linear-gradient(180deg, #f8f9fa, #dbf7fa, #f9e5ec);
+  background-size: 3000% 3000%; 
+  animation: backgroundAnimation 3s ease infinite;
+}
+
+@keyframes backgroundAnimation {
+  0% {background-position: 0% 50%}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
 h1 {
   color: #333;
+  font-size: 40px;
+  animation: salto 2s infinite;
+  
+}
+
+/*En la Anim solo le doy efecto al 40% y 60% dejo los otros puntos sin valores */
+@keyframes salto {
+  0%, 20%, 50%, 80%, 100% 
+  {transform: translateY(0);}
+  40% {transform: translateY(-20px);}
+  60% {transform: translateY(-10px);};
 }
 
 button {
   margin-top: 10px;
   padding: 8px 16px;
   font-size: 16px;
-  background-color: #007bff;
+  background-color: #007bffbe;
   color: #fff;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 button:hover {
   background-color: #0056b3;
+  border-radius: 40;
+  transition: 0.5s;
 }
 
+ul{
+  margin-right: 35px;
+  margin-top: 50px;
+}
 
+li{
+    /* border: 1px solid rgb(93, 0, 255); */
+    height: 6rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    font-size: 20px;
+}
 
+button.borrar{
+  margin-bottom: 15px;
+  margin-left: 15px;
+  border-radius: 5px;
+  /* border: 1px solid rgb(93, 0, 255); */
+}
+
+div.chiste{
+  background-color: transparent;
+  border: 0.5px gray solid;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0px 0px 29px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 29px -6px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 29px -6px rgba(0,0,0,0.75);
+  transition: 0.5s;
+}
+
+div.chiste:hover{
+  box-shadow: 0px 0px 53px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 53px -6px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 53px -6px rgba(0,0,0,0.75);
+  transition: 0.5s;
+}
